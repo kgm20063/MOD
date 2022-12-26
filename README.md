@@ -1,2 +1,3 @@
 # MOD
-MOD동아리 활동기록
+2022.09.21 - currently in progress
+Master Of web Design & Developer
