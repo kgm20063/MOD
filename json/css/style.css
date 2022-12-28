@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -25,8 +26,8 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 20px;
   row-gap: 20px;
+  column-gap: 20px;
 }
 
 .box {
@@ -34,6 +35,7 @@ body {
   width: 320px;
   height: 320px;
   box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .imgBox {
@@ -82,7 +84,7 @@ span {
 }
 
 .blur {
-  opacity: .3;
+  opacity: 0.3;
   width: 100vw;
   height: 100vh;
   background: #000;
@@ -96,11 +98,49 @@ span {
 .popup {
   background: #fff;
   width: 800px;
-  height: 400px;
+  height: 450px;
   position: fixed;
   transform: translate(-50%, -50%);
   top: 30%;
   left: 50%;
   margin: 0 auto;
   display: none;
+  padding: 15px;
+}
+
+.popup > p {
+  font-size: 15px;
+}
+
+.popupImgBox {
+  width: 100%px;
+  height: 200px;
+  background: #eeeeee;
+}
+
+.popupTitle {
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.popupContent {
+  margin: 8px 15px;
+  word-wrap: break-word;
+}
+
+hr {
+  color: rgb(232, 232, 232);
+}
+
+.popupDate {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+}
+
+.popupName {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  color: gray;
 }
