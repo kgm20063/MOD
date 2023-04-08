@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Avenir, Arial, georgia;
+  color: #333;
+}
+
+.flex {
+  display: flex;
+}
+
+header {
+  width: 100%;
+  height: 120px;
+  background: #f6f5ef;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  top: 20px;
+  right: 20px;
+}
+
+.nav-wrap {
+  width: 1000px;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+
+.utilMenu {
+  position: relative;
+  top: 10px;
+}
+
+.utilMenu ul {
+  width: 550px;
+}
+
+.utilMenu li {
+  text-align: center;
+}
+
+.utilMenu li:nth-child(1) {
+  width: 76px;
+}
+.utilMenu li:nth-child(2) {
+  width: 107px;
+}
+.utilMenu li:nth-child(3) {
+  width: 181px;
+}
+.utilMenu li:nth-child(4) {
+  width: 97px;
+}
+
+.utilMenu a {
+  position: relative;
+  top: 7px;
+  display: block;
+  line-height: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.utilMenu .btn {
+  width: 34px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+}
+
+.utilMenu .btn > img {
+  width: 100%;
+}
+
+.mainMenu {
+  position: relative;
+  top: 30px;
+}
+
+.mainMenu li {
+  text-align: center;
+}
+
+.mainMenu li:nth-child(1) {
+  width: 89px;
+}
+.mainMenu li:nth-child(2) {
+  width: 73px;
+}
+.mainMenu li:nth-child(3) {
+  width: 79px;
+}
+.mainMenu li:nth-child(4) {
+  width: 153px;
+}
+.mainMenu li:nth-child(5) {
+  width: 200px;
+}
+.mainMenu li:nth-child(6) {
+  width: 170px;
+}
+.mainMenu li:nth-child(7) {
+  width: 131px;
+}
