@@ -1,64 +1,63 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
   box-sizing: border-box;
 }
 
 html,
 body {
-  background: rgb(199, 199, 199);
+  background: #eeeeee;
 }
 
-.wrap {
-  width: 1700px;
-  margin: 0 auto;
-}
-
-.text {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color: #000;
+h2 {
+  color: #ffffff;
+  line-height: 70px;
+  padding-left: 100px;
+  position: fixed;
+  background: #1d1d1d;
+  width: 100%;
+  height: 70px;
+  opacity: 0.8;
+  z-index: 100;
 }
 
 .container {
   width: 1700px;
-  height: 100vh;
-  margin: 0 auto;
+  padding-left: 100px;
+  padding-top: 70px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 20px;
-  column-gap: 20px;
+  column-gap: 25px;
+  row-gap: 25px;
 }
 
 .box {
-  background: #fefefe;
+  position: relative;
   width: 320px;
   height: 320px;
-  box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
 }
 
 .imgBox {
   width: 100%;
   height: 50%;
-  background: #eee;
+  background: #f3f3f3;
 }
 
 .title {
+  color: #000000;
   margin-top: 20px;
-  margin-left: 10px;
-  color: #000;
+  margin-left: 9px;
 }
 
-span {
-  color: #000;
-}
-
-.content {
+.contents {
+  margin: 0 auto;
   width: 94%;
   height: 3.6em;
   margin-top: 5px;
-  padding-left: 10px;
   overflow: hidden;
   white-space: normal;
   line-height: 1.2;
@@ -67,80 +66,29 @@ span {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  color: gray;
-}
-
-.date {
-  float: right;
-  margin-top: 30px;
-  margin-right: 10px;
-  color: gray;
-}
-
-.name {
-  margin-top: 30px;
-  margin-left: 10px;
-  color: gray;
-}
-
-.blur {
-  opacity: 0.3;
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  display: none;
-}
-
-.popup {
-  background: #fff;
-  width: 800px;
-  height: 450px;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  top: 30%;
-  left: 50%;
-  margin: 0 auto;
-  display: none;
-  padding: 15px;
-}
-
-.popup > p {
-  font-size: 15px;
-}
-
-.popupImgBox {
-  width: 100%px;
-  height: 200px;
-  background: #eeeeee;
-}
-
-.popupTitle {
-  margin-top: 25px;
-  margin-left: 15px;
-}
-
-.popupContent {
-  margin: 8px 15px;
-  word-wrap: break-word;
+  color: #a5a5a5;
 }
 
 hr {
-  color: rgb(232, 232, 232);
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  background-color: #000000;
 }
 
-.popupDate {
+.name {
   position: absolute;
-  right: 20px;
-  bottom: 30px;
+  bottom: 0;
+  margin: 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.popupName {
+.date {
   position: absolute;
-  left: 20px;
-  bottom: 30px;
-  color: gray;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
