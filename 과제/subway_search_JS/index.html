@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>subway_search</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header><h1>역정보 검색 시스템</h1></header>
+      <div class="content">
+        <div class="search">
+          <form action="#" onsubmit="return false;">
+            <input type="text" name="search_key" placeholder="역이름으로 검색해보세요" autocomplete="off" />
+            <button>검색</button>
+          </form>
+        </div>
+        <div class="autocomplete">
+          <ul></ul>
+        </div>
+        <div class="timer">
+          <h2>Copyright &copy; Webskills, 2016</h2>
+        </div>
+        <div class="result"></div>
+      </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/station_list.js"></script>
+    <script src="./js/time_list.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
