@@ -6,11 +6,12 @@ const $result = document.querySelector(".result");
 $input.addEventListener("input", () => {
   $list.textContent = null; // 계속 추가 되는것을 막아줌
   const inputValue = $input.value;
-  const stList = stationList.data.filter((e) => e.station_nm.includes(inputValue));
+  const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
 
-  stList.slice(0, 10).forEach((e) => {
+  stlist.slice(0, 10).forEach((e) => {
     const li = document.createElement("li");
-    li.innerHTML = `${e.station_nm} ${e.line_num}`;
+    const replaceText = e.station_nm.replace(inputValue, `<span class="red">${inputValue}</span>`); // 입력한 value값과 같은 문자를 span태그로 감싸게 하고 클래스 red를 넣음
+    li.innerHTML = `${replaceText} ${e.line_num}`;
     $list.append(li);
   });
   if (inputValue == "") $list.textContent = null;
@@ -19,13 +20,24 @@ $input.addEventListener("input", () => {
 $search_btn.addEventListener("click", () => {
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
+  $result.innerHTML = "";
+  stlist.sort(function (a, b) {
+    const aa = a.station_nm;
+    const bb = b.station_nm;
+    if (aa < bb) {
+      return -1;
+    }
+    if (aa > bb) {
+      return 1;
+    }
+    return 0;
+  });
 
   stlist.forEach((list) => {
-    list.textContent = null;
     const div = document.createElement("div");
-    timeList.data.forEach((e) => {
-      if (list.station_cd === e.station_cd) {
-        div.textContent = `${list.station_nm} ${list.line_num} ${e.first_time} ${e.last_time}`;
+    timeList.data.forEach((time) => {
+      if (list.station_cd === time.station_cd) {
+        div.innerHTML = `<span>${list.station_nm}역</span> ${list.line_num} <span>첫차: ${time.first_time}</span> <span>막차: ${time.last_time}</span>`;
         $result.append(div);
       }
     });
