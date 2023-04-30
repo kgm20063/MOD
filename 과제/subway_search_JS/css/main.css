@@ -14,7 +14,6 @@ body {
   color: #f00;
   font-weight: bold;
 }
-.red {
-  color: white;
-  background: red;
+.yellow {
+  background: yellow;
 }
