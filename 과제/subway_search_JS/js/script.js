@@ -1,12 +1,12 @@
 const $input = document.querySelector("input");
+console.log($input);
 const $search_btn = document.querySelector("button");
 const $list = document.querySelector(".autocomplete > ul");
 const $result = document.querySelector(".result");
 let nowindex = 0;
 
-$input.addEventListener("input", (e) => {
-  console.log(e.keycode);
-  $list.textContent = null; // 계속 추가 되는것을 막아줌
+$input.addEventListener("input", () => {
+  $list.textContent = null; // 계속 추가 되는 것을 막아줌
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
   stlist.sort(function (a, b) {
@@ -33,7 +33,8 @@ $input.addEventListener("input", (e) => {
 $search_btn.addEventListener("click", () => {
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
-  $result.innerHTML = "";
+  $result.innerHTML = ""; // 계속 추가 되는 것을 막아줌
+  if (inputValue === "") return;
   stlist.sort(function (a, b) {
     let aa = a.station_nm;
     let bb = b.station_nm;
