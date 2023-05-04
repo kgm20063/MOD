@@ -1,9 +1,9 @@
 const $input = document.querySelector("input");
-console.log($input);
 const $search_btn = document.querySelector("button");
 const $list = document.querySelector(".autocomplete > ul");
 const $result = document.querySelector(".result");
 let nowindex = 0;
+let index = 0; // ~
 
 $input.addEventListener("input", () => {
   $list.textContent = null; // 계속 추가 되는 것을 막아줌
@@ -30,6 +30,20 @@ $input.addEventListener("input", () => {
   if (inputValue == "") $list.textContent = null;
 });
 
+// ~
+$input.addEventListener("keydown", (e) => {
+  if (e.keyCode == 40) {
+    const $lis = document.querySelectorAll(".autocomplete>ul>li");
+    $lis.forEach((e) => {
+      e.classList.remove("active");
+    });
+    if (index == 10) index = 0;
+    $lis[index].classList.add("active");
+    $input.value = $lis[index].textContent;
+    index++;
+  }
+});
+// ~
 $search_btn.addEventListener("click", () => {
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
