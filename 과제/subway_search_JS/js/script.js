@@ -23,7 +23,7 @@ $input.addEventListener("input", () => {
   stlist.slice(0, 10).forEach((e) => {
     const li = document.createElement("li");
     const replaceText = e.station_nm.replace(inputValue, `<span class="same">${inputValue}</span>`); // 입력한 value값과 같은 문자를 span태그로 감싸게 하고 클래스 same을 넣음
-    li.innerHTML = `${replaceText} ${e.line_num}`;
+    li.innerHTML = `<span>${replaceText}</span> <span>${e.line_num}</span>`;
     $list.append(li);
   });
   if (inputValue == "") $list.textContent = null;
@@ -31,15 +31,14 @@ $input.addEventListener("input", () => {
 
 // ~
 $input.addEventListener("keydown", (e) => {
-  console.log(e.keyCode);
   if (e.keyCode == 40) {
     let $lis = document.querySelectorAll(".autocomplete>ul>li");
     $lis.forEach((e) => {
       e.classList.remove("active");
     });
-    if (index == 10) index = 0;
+    if (index == $lis.length) index = 0;
     $lis[index].classList.add("active");
-    $input.value = $lis[index].textContent;
+    $input.value = $lis[index].firstChild.textContent;
     index++;
   }
 });
