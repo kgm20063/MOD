@@ -2,7 +2,6 @@ const $input = document.querySelector("input");
 const $search_btn = document.querySelector("button");
 const $list = document.querySelector(".autocomplete > ul");
 const $result = document.querySelector(".result");
-let nowindex = 0;
 let index = 0; // ~
 
 $input.addEventListener("input", () => {
@@ -23,7 +22,7 @@ $input.addEventListener("input", () => {
 
   stlist.slice(0, 10).forEach((e) => {
     const li = document.createElement("li");
-    const replaceText = e.station_nm.replace(inputValue, `<span class="yellow">${inputValue}</span>`); // 입력한 value값과 같은 문자를 span태그로 감싸게 하고 클래스 red를 넣음
+    const replaceText = e.station_nm.replace(inputValue, `<span class="same">${inputValue}</span>`); // 입력한 value값과 같은 문자를 span태그로 감싸게 하고 클래스 same을 넣음
     li.innerHTML = `${replaceText} ${e.line_num}`;
     $list.append(li);
   });
@@ -32,8 +31,9 @@ $input.addEventListener("input", () => {
 
 // ~
 $input.addEventListener("keydown", (e) => {
+  console.log(e.keyCode);
   if (e.keyCode == 40) {
-    const $lis = document.querySelectorAll(".autocomplete>ul>li");
+    let $lis = document.querySelectorAll(".autocomplete>ul>li");
     $lis.forEach((e) => {
       e.classList.remove("active");
     });
@@ -44,6 +44,7 @@ $input.addEventListener("keydown", (e) => {
   }
 });
 // ~
+
 $search_btn.addEventListener("click", () => {
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));

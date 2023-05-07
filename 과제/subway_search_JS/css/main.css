@@ -11,33 +11,57 @@ body {
   height: 100%;
   font-family: "Malgun Gothic";
   font-size: 16px;
+  background: #333;
 }
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 50px;
+}
+
 /* ~ */
 .active {
   background: blue;
 }
 /* ~ */
+
 .wrap {
   margin: 0 auto;
   width: 500px;
-  /* text-align: center; */
 }
 
 form {
-  width: 300px;
+  width: 500px;
   position: relative;
 }
 
 input {
-  width: 300px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding: 20px;
 }
 
 button {
   position: absolute;
   right: 0;
-  width: 50px;
+  width: 80px;
   height: 30px;
+  margin-top: 5px;
+  margin-right: 1px;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+}
+
+ul > li {
+  background: #fff;
+  width: 100%;
+  line-height: 5px;
+  padding: 20px;
 }
 
 .hl-key {
@@ -45,6 +69,6 @@ button {
   font-weight: bold;
 }
 
-.yellow {
+.same {
   color: red;
 }
