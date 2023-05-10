@@ -56,7 +56,7 @@ $search_btn.addEventListener("click", () => {
   $result.innerHTML = ""; // 계속 추가 되는 것을 막아줌
   if (inputValue === "") return;
   // 검색결과는 역이름을 기준으로 오름차순 정렬한다.
-  stlist.sort(function (a, b) {
+  stlist.sort((a, b) => {
     let aa = a.station_nm;
     let bb = b.station_nm;
     if (aa < bb) {
