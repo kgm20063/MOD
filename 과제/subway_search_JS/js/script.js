@@ -5,6 +5,7 @@ const $result = document.querySelector(".result");
 let index = 0; // ~
 
 $input.addEventListener("input", () => {
+  index = 0;
   $list.textContent = null; // 계속 추가 되는 것을 막아줌
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
