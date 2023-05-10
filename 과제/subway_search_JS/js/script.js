@@ -11,7 +11,7 @@ $input.addEventListener("input", () => {
   const inputValue = $input.value;
   const stlist = stationList.data.filter((e) => e.station_nm.includes(inputValue));
   // 자동완성 리스트 요소는 역명 기준으로 오름차순 정렬한다.
-  stlist.sort(function (a, b) {
+  stlist.sort((a, b) => {
     let aa = a.station_nm;
     let bb = b.station_nm;
     if (aa < bb) {
